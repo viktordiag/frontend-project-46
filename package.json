@@ -17,5 +17,6 @@
   },
   "homepage": "https://github.com/viktordiag/frontend-project-46#readme",
 	"type": "module",
-	"private": true
+	"private": true,
+	"bin": { "gendiff": "bin/gendiff.js" }
 }
