@@ -22,6 +22,7 @@
     "gendiff": "bin/gendiff.js"
   },
   "dependencies": {
-    "commander": "^10.0.0"
+    "commander": "^10.0.0",
+    "fs": "^0.0.1-security"
   }
 }
