@@ -18,21 +18,21 @@ const dataFile = (filepath1, filepath2) => {
 const difFile = keys.reduce((arrAcc, key) => {
 
 		if (!_.has(objFile1, key)) {
-			arrAcc.push(`+${key}:${objFile2[key]}`);
+			arrAcc.push(` +${key}:${objFile2[key]}`);
 			return arrAcc;
 		}
 
 		if (!_.has(objFile2, key)) {
-			arrAcc.push(`-${key}:${objFile1[key]}`);
+			arrAcc.push(` -${key}:${objFile1[key]}`);
 			return arrAcc;
 		}
 
 		if (objFile1[key] === objFile2[key]) {
-			arrAcc.push(` ${key}:${objFile1[key]}`);
+			arrAcc.push(`  ${key}:${objFile1[key]}`);
 			return arrAcc;
 		} else { 
-			arrAcc.push(`-${key}:${objFile1[key]}`);
-			arrAcc.push(`+${key}:${objFile2[key]}`);
+			arrAcc.push(` -${key}:${objFile1[key]}`);
+			arrAcc.push(` +${key}:${objFile2[key]}`);
 		}
 
 		return arrAcc;
