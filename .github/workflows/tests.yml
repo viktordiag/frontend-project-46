@@ -7,4 +7,14 @@ jobs: # если необходимо запустить несколько пр
     - uses: actions/checkout@v3 # клонируем репозиторий на сервер github
     - uses: actions/setup-node@v3 # устанавливаем на сервер nodejs
     - run: npm ci # устанавливаем зависимости проекта из package-lock.json
-    - run: make lint # запускаем проверку eslint  
+    - run: make lint # запускаем проверку eslint
+    - name: Test & publish code coverage
+      # Publish code coverage on Code Climate
+      # https://github.com/paambaati/codeclimate-action
+      uses: paambaati/codeclimate-action@v3.0.0
+      # Add Code Climate secret key
+      env:
+        CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+      with:
+        coverageCommand: make test-coverage
+        debug: true
