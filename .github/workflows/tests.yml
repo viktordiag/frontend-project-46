@@ -5,6 +5,7 @@ jobs: # если необходимо запустить несколько пр
     name: build # имя которое будет отображаться в пользовательском интерфейсе GitHub
     runs-on: ubuntu-latest # операционная система для рабочего процесса
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v3 # клонируем репозиторий на сервер github
+    - uses: actions/setup-node@v3 # устанавливаем на сервер nodejs
     - run: ls 
     
