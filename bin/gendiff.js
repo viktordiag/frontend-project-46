@@ -12,7 +12,7 @@ const dataFile = (filepath1, filepath2) => {
 
   const keys1 = _.keys(objFile1); // извлекаем ключи из файла
   const keys2 = _.keys(objFile2);
-  const keysUnion = _.union(keys1, keys2); // объединяем ключи из двух файлов без повторений в один массив
+  const keysUnion = _.union(keys1, keys2); // ключи из двух файлов без повторений в один массив
   const keys = keysUnion.sort(); // сортируем массив в алфавитном порядке
 
   const difFile = keys.reduce(
@@ -36,7 +36,7 @@ const dataFile = (filepath1, filepath2) => {
 
       return arrAcc;
     },
-			 ['{'],
+    ['{'],
   );
 
   difFile.push('}');
