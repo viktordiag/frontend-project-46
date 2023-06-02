@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-import { program } from 'commander'
-import { dataFile } from '../src/index.js'
+import { program } from 'commander';
+import { dataFile } from '../src/index.js';
 
 program
   .version('0.0.1')
