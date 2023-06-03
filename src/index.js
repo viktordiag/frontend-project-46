@@ -20,6 +20,7 @@ export default (filepath1, filepath2) => {
       }
 
       if (!_.has(objFile2, key)) {
+        console.log();
         arrAcc.push(` -${key}:${objFile1[key]}`);
         return arrAcc;
       }
