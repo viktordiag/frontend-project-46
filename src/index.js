@@ -1,7 +1,7 @@
 import fs from 'fs';
 import _ from 'lodash';
 
-const dataFile = (filepath1, filepath2) => {
+export default (filepath1, filepath2) => {
   const dataFile1 = fs.readFileSync(filepath1, 'utf8'); // читаем содержимое файла. путь до файла filepath
   const dataFile2 = fs.readFileSync(filepath2, 'utf8'); // содержимое приходит как JSON строка
   const objFile1 = JSON.parse(dataFile1); // изменяем JSON формат в оригинальный (до форматирования)
@@ -40,5 +40,3 @@ const dataFile = (filepath1, filepath2) => {
   const diffResult = difFile.join('\n');
   console.log(diffResult);
 };
-
-export { dataFile };
