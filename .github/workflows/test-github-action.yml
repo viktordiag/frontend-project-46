@@ -4,5 +4,5 @@ jobs:
   print:
     runs-on: ubuntu-latest
     steps:
-      -name: print text
+      - name: print text
         run: echo Hello HG Action
