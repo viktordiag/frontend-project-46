@@ -30,6 +30,7 @@ export default (path1, path2) => {
       }
 
       if (!_.has(objFile2, key)) {
+        // codeclimat
         arrAcc.push(` -${key}:${objFile1[key]}`);
         return arrAcc;
       }
