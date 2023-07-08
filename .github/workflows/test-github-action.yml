@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 name: function_tests 
 on: push 
+=======
+name:function_tests 
+on:push 
+>>>>>>> e6b60d2 (gh actions functiontest)
 jobs:
   test1:
     runs-on: ubuntu-latest
