@@ -12,7 +12,6 @@ export default (path1, path2) => {
   const objFile1 = parser(filepath1);
   const objFile2 = parser(filepath2);
 
-
   // извлекаем ключи из файла
   const keys1 = _.keys(objFile1);
   const keys2 = _.keys(objFile2);
@@ -51,5 +50,3 @@ export default (path1, path2) => {
   const diffResult = difFile.join('\n');
   return diffResult;
 };
-
-

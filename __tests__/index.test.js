@@ -20,7 +20,7 @@ describe('compare files', () => {
   test('it compare json files', () => {
     expect(gendiff(filePath1, filePath2)).toEqual(fileOutJson);
   });
-//  test('it compare yaml files', () => {
-//    expect(gendiff(filePath3, filePath4)).toEqual(fileOutYaml);
-//  });
+  test('it compare yaml files', () => {
+    expect(gendiff(filePath3, filePath4)).toEqual(fileOutYaml);
+  });
 });
