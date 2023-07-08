@@ -1,16 +1,32 @@
 import fs from 'fs';
 import _ from 'lodash';
+import path from 'node:path';
+import process from 'node:process';
 
-export default (filepath1, filepath2) => {
-  const dataFile1 = fs.readFileSync(filepath1, 'utf8'); // читаем содержимое файла. путь до файла filepath
-  const dataFile2 = fs.readFileSync(filepath2, 'utf8'); // содержимое приходит как JSON строка
-  const objFile1 = JSON.parse(dataFile1); // изменяем JSON формат в оригинальный (до форматирования)
+
+export default (path1, path2) => {
+// возможность использовать относительный или абсолютный путь	
+	const filepath1 = path.resolve(process.cwd(), path1);
+	const filepath2 = path.resolve(process.cwd(), path2);
+
+// читаем содержимое файла. путь до файла filepath
+// содержимое приходит как JSON строка
+  const dataFile1 = fs.readFileSync(filepath1, 'utf8');
+	const dataFile2 = fs.readFileSync(filepath2, 'utf8');
+
+// изменяем JSON формат в оригинальный (до форматирования)
+  const objFile1 = JSON.parse(dataFile1); 
   const objFile2 = JSON.parse(dataFile2);
-
-  const keys1 = _.keys(objFile1); // извлекаем ключи из файла
+	
+// извлекаем ключи из файла
+  const keys1 = _.keys(objFile1);
   const keys2 = _.keys(objFile2);
-  const keysUnion = _.union(keys1, keys2); // ключи из двух файлов без повторений в один массив
-  const keys = keysUnion.sort(); // сортируем массив в алфавитном порядке
+	
+// ключи из двух файлов без повторений в один массив
+  const keysUnion = _.union(keys1, keys2);
+	
+// сортируем массив в алфавитном порядке
+  const keys = keysUnion.sort();
 
   const difFile = keys.reduce(
     (arrAcc, key) => {
