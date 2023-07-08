@@ -56,3 +56,5 @@ export default (path1, path2) => {
   const diffResult = difFile.join('\n');
   return diffResult;
 };
+
+

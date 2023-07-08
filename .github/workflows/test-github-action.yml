@@ -1,8 +1,10 @@
-name: Testing GH Action
-on: workflow_dispatch
+name:function_tests 
+on:push 
 jobs:
-  print:
+  test1:
     runs-on: ubuntu-latest
     steps:
-      - name: print text
-        run: echo Hello HG Action
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+      - run: make install
+      - run: make test
